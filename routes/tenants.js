@@ -43,12 +43,12 @@ router.post('/addTenant', (req,res)=>{
 })
 
 
-/////// find a Tenant then edits it I am not sending it back here because i am taking care of that on the client side
+/////// find a Tenant then edits it and semds it back to the client
 
 
 router.put('/editTenant', (req,res)=>{
    Tenant.findByIdAndUpdate(req.body._id, req.body, (err,tenant)=>{
-      res.json('Done')
+      res.json(req.body)
    })
 })
 
